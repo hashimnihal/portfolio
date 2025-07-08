@@ -1368,8 +1368,82 @@ body.modal-open {
 }
 
 /* End Testimonials */
+/* Contact Bar */
+.top-contact {
+  position: fixed;
+  top: 0;
+  
+  z-index: 1001;
+  border-bottom: 1px ;
+  padding: 1px 0;
+  font-size: 15px;
+  text-align: center;
+   white-space: nowrap; /* Keep all content on one line */
+    overflow-x: auto; /* Allow horizontal scrolling if content overflows */
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+}
+
+/* Contact content container */
+.contact-container {
+  max-width: 5000px;
+ flex-wrap: nowrap;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 0 50px;
+  text-align: center;
+}
+
+.contact-item {
+  margin: 5px 10px;
+   flex-shrink: 0;
+  
+}
+
+.contact-item a {
+  color: #0d0d0e;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.contact-item a:hover {
+  color: #0077b5;
+}
+/* --- Mobile Responsive Adjustments (for single line) --- */
+
+@media (max-width: 768px) {
+    .contact-container {
+        padding: 0 10px; /* Reduce padding to give more space */
+        justify-content: flex-start; /* Align items to the start for scrolling */
+    }
+
+    .contact-item {
+        margin: 0px 0px; /* Reduce margins between items */
+    }
+
+    .top-contact {
+        font-size: 2px; /* Slightly reduce font size */
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-container {
+        padding: 0px 20px; /* Further reduce padding */
+    }
+    .contact-item {
+        margin: 3px 3px; /* Minimal margin */
+    }
+    .top-contact {
+        font-size: 8px; /* Further reduce font size on small screens */
+    }
+}
+
+
+
 
 /* Contact */
+
+
 
 .contact {
   position: relative;
@@ -1790,6 +1864,8 @@ body.modal-open {
     background-color: #fff;
     margin: 5px auto;
   }
+
+
 }
 
 @keyframes scale {
@@ -2379,6 +2455,7 @@ body.modal-open {
   .contact-box {
     grid-template-columns: 1fr;
     padding: 3.2rem 2.7rem;
+    
   }
 
   .contact-info {

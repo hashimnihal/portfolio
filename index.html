@@ -37,6 +37,25 @@
           <img src="./img/shapes/letters.png" class="letters" alt="" />
           <img src="./img/shapes/points1.png" class="points points1" alt="" />
         </div>
+        <div class="top-contact">
+  <div class="container contact-container">
+    <div class="contact-item">
+  📍 <a href="https://www.google.com/maps/place/Mangalore,+Karnataka" target="_blank">Mangalore, India</a>
+</div>
+
+    <div class="contact-item">
+      📞 <a href="tel:+919482549071">+91 9482549071</a>
+    </div>
+    <div class="contact-item">
+      📩 <a href="mailto:hashimaachi46@gmail.com">hashimaachi46@gmail.com</a>
+    </div>
+    <div class="contact-item">
+      🔗 <a href="http://linkedin.com/in/hashim-nihal-b2714831b" target="_blank">LinkedIn Profile</a>
+    </div>
+  </div>
+</div>
+
+
 
         <nav class="navbar" id="navbar">
           <div class="container">
@@ -216,7 +235,7 @@ Proficient in HTML, CSS, JavaScript, and modern frameworks, I focus on clean cod
             <div class="column-1">
               <h3 class="title-sm">Hello, I'm</h3>
              <p class="text">
-  I'm Ashim Nihal, a passionate Web Designer & Developer dedicated to building modern, responsive, and user-friendly websites. With a strong foundation in HTML, CSS, JavaScript, and frameworks like React, I transform creative ideas into functional digital experiences. I take pride in clean code, intuitive interfaces, and delivering high-quality solutions tailored to your needs.
+  I'm Hashim Nihal, a passionate Web Designer & Developer dedicated to building modern, responsive, and user-friendly websites. With a strong foundation in HTML, CSS, JavaScript, and frameworks like React, I transform creative ideas into functional digital experiences. I take pride in clean code, intuitive interfaces, and delivering high-quality solutions tailored to your needs.
 </p>
 
               <div class="skills">
@@ -634,58 +653,71 @@ document.addEventListener("DOMContentLoaded", function () {
                   <div class="contact-icon">
                     <i class="fas fa-phone-alt"></i>
                   </div>
-                  <a href="tel:9482549071">
-                  <p class="info-text">9482549071</p>
+                  <a href="tel:+919482549071">
+                  <p class="info-text">+91 9482549071</p>
                    </a>
                 </div>
               </div>
             </div>
 
-            <div class="contact-form">
-              <form id="contact-form">
-  <h3 class="title">Contact me</h3>
+<div class="contact-form">
+    <form id="contact-form">
+        <h3 class="title">Contact me</h3>
 
-  <div class="row">
-    <input type="text" name="first_name" class="contact-input" placeholder="First Name" required />
-    <input type="text" name="last_name" class="contact-input" placeholder="Last Name" required />
-  </div>
-
-  <div class="row">
-    <input type="text" name="phone" class="contact-input" placeholder="Phone" />
-    <input type="email" name="email" class="contact-input" placeholder="Email" required />
-  </div>
-
-  <div class="row">
-    <textarea name="message" class="contact-input textarea" placeholder="Message" required></textarea>
-  </div>
-
-  <button type="submit" class="btn">Send</button>
-</form>
-
-
-          
-            </div>
-          </div>
+        <div class="row">
+            <input type="text" name="first_name" class="contact-input" placeholder="First Name" required />
+            <input type="text" name="last_name" class="contact-input" placeholder="Last Name" required />
         </div>
-        <!-- Add this EmailJS SDK -->
-<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+
+        <div class="row">
+            <input type="text" name="phone" class="contact-input" placeholder="Phone" />
+            <input type="email" name="email" class="contact-input" placeholder="Email" required />
+        </div>
+
+        <div class="row">
+            <textarea name="message" class="contact-input textarea" placeholder="Message" required></textarea>
+        </div>
+
+        <button type="submit" class="btn">Send</button>
+    </form>
+</div>
+
 <script>
-  (function() {
-    emailjs.init("Lu71bWfFVv13ogGOj"); // Replace with your EmailJS public key
-  })();
+    document.getElementById('contact-form').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent the default form submission
 
-  document.getElementById('contact-form').addEventListener('submit', function(e) {
-    e.preventDefault();
+        // --- Configuration ---
+        const whatsappNumber = 'YOUR_WHATSAPP_NUMBER'; // Replace with your WhatsApp number including country code (e.g., 919876543210 for India)
+        // -------------------
 
-    emailjs.sendForm('service_md1lbpk', 'template_gvpdz0g', this)
-      .then(function() {
-        alert('Message sent successfully!');
-      }, function(error) {
-        alert('Failed to send message. Error: ' + JSON.stringify(error));
-      });
-  });
+        const firstName = document.querySelector('input[name="first_name"]').value;
+        const lastName = document.querySelector('input[name="last_name"]').value;
+        const phone = document.querySelector('input[name="phone"]').value;
+        const email = document.querySelector('input[name="email"]').value;
+        const message = document.querySelector('textarea[name="message"]').value;
+
+        // Construct the message for WhatsApp
+        let whatsappMessage = `
+*New Contact Form Submission:*
+
+*Name:* ${firstName} ${lastName}
+*Email:* ${email}
+*Phone:* ${phone || 'N/A'}
+
+*Message:*
+${message}
+        `.trim(); // .trim() removes leading/trailing whitespace
+
+        // Encode the message for the URL
+        const encodedMessage = encodeURIComponent(whatsappMessage);
+
+        // Construct the WhatsApp URL
+        const whatsappURL = `https://wa.me/${9482549071}?text=${encodedMessage}`;
+
+        // Open WhatsApp chat in a new tab/window
+        window.open(whatsappURL, '_blank');
+    });
 </script>
-
       </section>
 
 
