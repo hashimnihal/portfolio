@@ -563,6 +563,40 @@ header .circle {
     font-size: 10px;
   }
 }
+  /* Style for your about image */
+.header-content .column-2 .img-element {
+  width: 450px;          /* control the size (adjust as you like) */
+  max-width: 100%;       /* makes it responsive */
+  height: auto; 
+           /* keeps aspect ratio */
+   
+  transition: transform 0.3s ease; /* smooth hover effect */
+  display: block;
+   margin: 80px auto 0 auto;        /* centers the image */
+}
+
+/* Add a hover effect */
+.header-content .column-2 .img-element:hover {
+  transform: scale(1.05); /* slight zoom on hover */
+}
+.header-content .column-1 {
+  margin-top: 120px;   /* adjust value as needed */
+}
+.projects-row {
+  display: flex;
+  justify-content: center; /* center row */
+  align-items: stretch;
+  gap: 20px;
+  flex-wrap: wrap;
+  padding: 40px; /* little breathing space */
+}
+
+.blog-card {
+  flex: 1 1 40%;      /* each card ~40% width */
+  max-width: 50px;   /* reduce max size so they fit */
+  margin: 0 auto;
+}
+
 
 
 /* End header */
@@ -1192,7 +1226,7 @@ body.modal-open {
 }
 
 .blog-card {
-  max-width: 420px;
+  max-width: 450px;
   width: 100%;
   overflow: hidden;
   background-color: var(--light-two);
@@ -1203,7 +1237,7 @@ body.modal-open {
 .blog-card:after {
   content: "";
   position: absolute;
-  width: 1100%;
+  width: 900%;
   height: 0px;
   bottom: 0;
   left: 0;
@@ -1438,6 +1472,15 @@ body.modal-open {
     }
 }
 
+/* Limit size only for CCNA5 image */
+#fullImage[src*="ccna5.jpg"] {
+  max-width: 200%;   /* smaller than others */
+  max-height: 90vh;
+  width: 500px;
+  height: 1100px;
+  
+ 
+}
 
 
 
